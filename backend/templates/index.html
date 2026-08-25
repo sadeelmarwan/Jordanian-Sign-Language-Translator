@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مترجم لغة الإشارة الأردنية | Jordanian Sign Language Translator</title>
+  
+   <!--SEO Meta Tags  -->
+  <meta name="description" content="تطبيق ذكي لترجمة لغة الإشارة الأردنية إلى نصوص ونطق صوتي باللغة العربية باستخدام الذكاء الاصطناعي والكاميرا.">
+  <meta name="keywords" content="لغة الإشارة, مترجم لغة الإشارة, لغة الإشارة الأردنية, ذكاء اصطناعي, الصم والبكم, ترجمة فورية">
+  <meta name="author" content="Jordanian Sign Language Translator Project">
+
+  <!--Google Fonts: Cairo (Arabic), Poppins & Inter (English)  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!--FontAwesome Icons for modern symbols  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+
+  <!--Tailwind CSS CDN  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#60A5FA',    // Sky Blue
+            secondary: '#DBEAFE',  // Soft Blue
+            accent: '#2563EB',     // Royal Accent Blue
+            textDark: '#1E293B',   // Dark slate
+            bgLight: '#F8FAFC',    // Soft slate background
+          },
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS for animations and Glassmorphism  -->
+  <link rel="stylesheet" href="/static/css/main.css">
+
+  <!-- MediaPipe Hands CDN Scripts (Legacy browser-friendly packages)  -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+
+  <!-- React 18 & ReactDOM 18 UMD production builds from CDN  -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+
+  <!--Babel Standalone for compiling React/JSX in the browser  -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!--Global Application State Init  -->
+  <script>
+    // Initialize the global namespace for modular script coordination
+    window.JSL_APP = {
+      services: {},
+      hooks: {},
+      components: {},
+      pages: {}
+    };
+  </script>
+</head>
+<body class="bg-bgLight text-textDark font-cairo antialiased selection:bg-secondary select-none">
+  
+  <!-- Root entry element for React   -->
+  <div id="root"></div>
+
+  <!-- Load Frontend Services   -->
+  <script type="text/babel" src="/static/js/services/api.js"></script>
+
+  <!-- Load Custom Hooks  -->
+  <script type="text/babel" src="/static/js/hooks/useSpeech.js"></script>
+
+  <!-- Load Reusable UI Components  -->
+  <script type="text/babel" src="/static/js/components/Navbar.js"></script>
+  <script type="text/babel" src="/static/js/components/Hero.js"></script>
+  <script type="text/babel" src="/static/js/components/CameraCard.js"></script>
+  <script type="text/babel" src="/static/js/components/PredictionCard.js"></script>
+  <script type="text/babel" src="/static/js/components/HistoryPanel.js"></script>
+  <script type="text/babel" src="/static/js/components/Footer.js"></script>
+
+  <!-- Load Navigation Pages  -->
+  <script type="text/babel" src="/static/js/pages/Home.js"></script>
+  <script type="text/babel" src="/static/js/pages/LiveTranslation.js"></script>
+  <script type="text/babel" src="/static/js/pages/About.js"></script>
+  <script type="text/babel" src="/static/js/pages/Contact.js"></script>
+
+  <!-- Main Root App Shell  -->
+  <script type="text/babel" src="/static/js/app.js"></script>
+
+</body>
+</html>

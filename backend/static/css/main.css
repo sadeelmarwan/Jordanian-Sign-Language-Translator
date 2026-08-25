@@ -1,0 +1,146 @@
+/* Jordanian Sign Language Translator - Custom Main Stylesheet */
+
+/* --- Custom Glassmorphism System --- */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(148, 163, 184, 0.08);
+}
+
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* --- Premium Animations & Hover Transitions --- */
+.hover-scale {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hover-scale:hover {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 12px 40px rgba(96, 165, 250, 0.15);
+}
+
+.btn-animate {
+  transition: all 0.2s ease-in-out;
+}
+.btn-animate:hover {
+  transform: translateY(-1px);
+}
+.btn-animate:active {
+  transform: translateY(1px);
+}
+
+/* Float Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse Glow Animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(96, 165, 250, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(96, 165, 250, 0);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Slide Up Fade */
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* --- Camera Canvas & Viewport Overlays --- */
+.webcam-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background-color: #0f172a; /* Slate 900 for dark viewfinder */
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+.webcam-feed {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1); /* Mirror camera feed for natural usage */
+}
+
+.landmarks-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform: scaleX(-1); /* Mirror overlay canvas to match mirrored camera */
+}
+
+/* --- Custom RTL Scrollbars --- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1; /* Slate 300 */
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8; /* Slate 400 */
+}
+
+/* Standardizing Arabic Font Weights and Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cairo', 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+/* Background Gradients */
+.gradient-bg {
+  background: radial-gradient(circle at 10% 20%, rgba(219, 234, 254, 0.4) 0%, rgba(248, 250, 252, 1) 90%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #2563EB 0%, #60A5FA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
